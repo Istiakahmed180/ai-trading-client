@@ -69,7 +69,7 @@ const AdminProfit = () => {
                 </th>
               </tr>
             </thead>
-            {adminProfit.length ? (
+            {adminProfit?.length ? (
               adminProfit?.map((item, index) => {
                 const formatedDate = moment(item?.date).format("DD-MM-YYYY");
 
