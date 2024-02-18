@@ -8,7 +8,7 @@ const RecentUsers = () => {
 
   useEffect(() => {
     axios
-      .get("https://usa-ai-trading-server.vercel.app/auth/recent-users")
+      .get("http://13.229.77.43/api/auth/recent-users")
       .then((res) => {
         setRecentUsers(res.data.data);
       })

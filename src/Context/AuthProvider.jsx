@@ -22,7 +22,7 @@ const AuthProvider = ({ children }) => {
 
       axios
         .post(
-          `https://usa-ai-trading-server.vercel.app/auth/user-info`,
+          `http://13.229.77.43/api/auth/user-info`,
           { token },
           header
         )

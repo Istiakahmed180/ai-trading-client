@@ -49,7 +49,7 @@ const AccountSetting = () => {
 
     axios
       .put(
-        `https://usa-ai-trading-server.vercel.app/auth/update-profile/${user?._id}`,
+        `http://13.229.77.43/api/auth/update-profile/${user?._id}`,
         updateProfile
       )
       .then((res) => {

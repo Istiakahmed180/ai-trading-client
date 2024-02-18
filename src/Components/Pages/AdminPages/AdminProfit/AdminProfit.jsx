@@ -10,7 +10,7 @@ const AdminProfit = () => {
     const fetchData = async () => {
       try {
         const getAdminProfit = await axios.get(
-          "https://usa-ai-trading-server.vercel.app/profit/get-admin-profit"
+          "http://13.229.77.43/api/profit/get-admin-profit"
         );
         const data = await getAdminProfit.data;
         setAdminProfit(data.data);

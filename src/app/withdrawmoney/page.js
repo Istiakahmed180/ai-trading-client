@@ -36,7 +36,7 @@ const WithdrawMoney = () => {
   const sendWithdrawRequest = async (userInfo) => {
     try {
       const saveWithdrawRequest = await axios.post(
-        "https://usa-ai-trading-server.vercel.app/withdraw/add-withdraw-request",
+        "http://13.229.77.43/api/withdraw/add-withdraw-request",
         userInfo
       );
       const data = await saveWithdrawRequest.data;
@@ -56,7 +56,7 @@ const WithdrawMoney = () => {
       try {
         setLoading(true);
         const userWithdrawHistory = await axios.get(
-          `https://usa-ai-trading-server.vercel.app/withdraw/get-user-withdraw-history?email=${user?.email}`
+          `http://13.229.77.43/api/withdraw/get-user-withdraw-history?email=${user?.email}`
         );
         const data = await userWithdrawHistory.data;
         setTimeout(() => {

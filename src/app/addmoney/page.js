@@ -32,7 +32,7 @@ const AddMoney = () => {
 
     axios
       .post(
-        "https://usa-ai-trading-server.vercel.app/invest/add-client",
+        "http://13.229.77.43/api/invest/add-client",
         clientData
       )
       .then((res) => {
@@ -53,7 +53,7 @@ const AddMoney = () => {
       try {
         setLoading(true);
         const userInvestmentData = await axios.get(
-          `https://usa-ai-trading-server.vercel.app/invest/get-user-investment-data?email=${user?.email}`
+          `http://13.229.77.43/api/invest/get-user-investment-data?email=${user?.email}`
         );
         const data = await userInvestmentData.data;
         setTimeout(() => {

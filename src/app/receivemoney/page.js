@@ -24,7 +24,7 @@ const ReceiveMoney = () => {
       try {
         setLoading(true);
         const userReceiveHistoryData = await axios.get(
-          `https://usa-ai-trading-server.vercel.app/received/get-user-receive-history?email=${user?.email}`
+          `http://13.229.77.43/api/received/get-user-receive-history?email=${user?.email}`
         );
         const data = await userReceiveHistoryData.data;
         setTimeout(() => {

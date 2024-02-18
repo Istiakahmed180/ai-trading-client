@@ -22,7 +22,7 @@ const AdminUserList = () => {
   const handleUsersDelete = async (id) => {
     try {
       const response = await axios.delete(
-        `https://usa-ai-trading-server.vercel.app/auth/delete-user/${id}`
+        `http://13.229.77.43/api/auth/delete-user/${id}`
       );
       const data = await response.data;
       if (data.success) {
@@ -38,7 +38,7 @@ const AdminUserList = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get("https://usa-ai-trading-server.vercel.app/auth/all-users")
+      .get("http://13.229.77.43/api/auth/all-users")
       .then((res) => {
         setTimeout(() => {
           setAllUser(res.data.users);

@@ -20,7 +20,7 @@ const Deposit = () => {
   const handleWithdrawDeposit = async (id) => {
     try {
       const withdrawAmount = await axios.put(
-        `https://usa-ai-trading-server.vercel.app/deposit/withdraw-deposit-money?id=${id}`
+        `http://13.229.77.43/api/deposit/withdraw-deposit-money?id=${id}`
       );
       const data = await withdrawAmount.data;
       if (data?.type === true) {
@@ -54,7 +54,7 @@ const Deposit = () => {
   const sendingDepositData = async (userData) => {
     try {
       const sendData = await axios.post(
-        "https://usa-ai-trading-server.vercel.app/deposit/add-deposit-transaction",
+        "http://13.229.77.43/api/deposit/add-deposit-transaction",
         userData
       );
       const data = await sendData.data;
@@ -74,7 +74,7 @@ const Deposit = () => {
       setLoading(true);
       try {
         const userDepositData = await axios.get(
-          `https://usa-ai-trading-server.vercel.app/deposit/get-deposit-transaction?email=${user?.email}`
+          `http://13.229.77.43/api/deposit/get-deposit-transaction?email=${user?.email}`
         );
         const data = await userDepositData.data;
         setTimeout(() => {

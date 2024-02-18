@@ -14,7 +14,7 @@ const AdminWithdrawHistory = () => {
   const handleWithdrawRequestDelete = async (id) => {
     try {
       const deleteWithdrawData = await axios.delete(
-        `https://usa-ai-trading-server.vercel.app/withdraw/delete-withdraw-approved-request/${id}`
+        `http://13.229.77.43/api/withdraw/delete-withdraw-approved-request/${id}`
       );
       const data = await deleteWithdrawData.data;
 
@@ -32,7 +32,7 @@ const AdminWithdrawHistory = () => {
       try {
         setLoading(true);
         const getApprevedWithdrawData = await axios.get(
-          "https://usa-ai-trading-server.vercel.app/withdraw/get-approve-withdraw-request"
+          "http://13.229.77.43/api/withdraw/get-approve-withdraw-request"
         );
         const data = await getApprevedWithdrawData.data;
         setTimeout(() => {

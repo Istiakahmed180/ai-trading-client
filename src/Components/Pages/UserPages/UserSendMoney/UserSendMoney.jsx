@@ -31,7 +31,7 @@ const UserSendMoney = () => {
 
     try {
       const fetchingData = await axios.post(
-        `https://usa-ai-trading-server.vercel.app/invest/transfer-amount`,
+        `http://13.229.77.43/api/invest/transfer-amount`,
         sendAmount
       );
       const data = await fetchingData.data;
@@ -76,7 +76,7 @@ const UserSendMoney = () => {
   const handelSendingHistoryData = async (senderHistoryData) => {
     try {
       const fetcingSendingHistory = await axios.post(
-        "https://usa-ai-trading-server.vercel.app/send/add-send-history",
+        "http://13.229.77.43/api/send/add-send-history",
         senderHistoryData
       );
       const data = await fetcingSendingHistory.data;
@@ -88,7 +88,7 @@ const UserSendMoney = () => {
   const handleReceivingHistoryData = async (receiverHistoryData) => {
     try {
       const fetchingReceivingHistory = await axios.post(
-        "https://usa-ai-trading-server.vercel.app/received/add-receive-data",
+        "http://13.229.77.43/api/received/add-receive-data",
         receiverHistoryData
       );
       const data = await fetchingReceivingHistory.data;
@@ -102,7 +102,7 @@ const UserSendMoney = () => {
       try {
         setLoading(true);
         const getUserSendHistory = await axios.get(
-          `https://usa-ai-trading-server.vercel.app/send/get-user-send-history?email=${user?.email}`
+          `http://13.229.77.43/api/send/get-user-send-history?email=${user?.email}`
         );
         const data = await getUserSendHistory.data;
 

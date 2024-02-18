@@ -1,12 +1,11 @@
 "use client";
+import { useContext, useState } from "react";
+import { useRouter } from "next/navigation";
 import Loader from "@/Components/Shared/Loader/Loader";
 import { AuthContext } from "@/Context/AuthProvider";
 import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { useContext, useState } from "react";
-import "../../Components/Shared/Styles/LoginComponent/Login.css";
 import Avatar from "../../../public/Assets/Avater.png";
 
 const SignUp = () => {
@@ -75,7 +74,7 @@ const SignUp = () => {
 
       axios
         .post(
-          "https://usa-ai-trading-server.vercel.app/auth/register",
+          "http://13.229.77.43/api/auth/register",
           userInfoData
         )
         .then((res) => {
@@ -149,12 +148,12 @@ const SignUp = () => {
   };
 
   if (loading) {
-    return <Loader></Loader>;
+    return <Loader />;
   }
 
   return (
     <div className="bg-[#05003B] min-h-screen flex items-center justify-center bg-image">
-      <div className=" w-2/6 mx-auto rounded-2xl p-10 bg-transparent border-2">
+      <div className="w-full md:w-2/3 lg:w-1/2 xl:w-1/2 mx-auto rounded-2xl p-10 bg-transparent border-2">
         <h1 className="text-white text-4xl font-semibold mb-6 text-center">
           Create An Account!
         </h1>
@@ -167,9 +166,9 @@ const SignUp = () => {
             height={50}
             className="w-full h-full"
           />
-          <label htmlhtmlFor="profileImage">
+          <label htmlFor="profileImage">
             <div className="absolute bottom-0 h-1/3 bg-opacity-50 bg-slate-900 hover:bg-slate-500 duration-300 cursor-pointer w-full text-center">
-              <span className="text-sm p-1 text-white ">Upload</span>
+              <span className="text-sm p-1 text-white">Upload</span>
             </div>
             <input
               type="file"
@@ -249,7 +248,7 @@ const SignUp = () => {
         <hr className="my-5 border-gray-400" />
 
         <p className="text-sm text-center text-white my-3">
-          Alreade Have An Account?{" "}
+          Already Have An Account?{" "}
           <Link href={"/login"}>
             <span className="text-blue-500">Sign In!</span>
           </Link>

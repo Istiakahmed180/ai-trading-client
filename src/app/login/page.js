@@ -40,7 +40,7 @@ const Login = () => {
 
       try {
         const response = await axios.post(
-          "https://usa-ai-trading-server.vercel.app/auth/login",
+          "http://13.229.77.43/api/auth/login",
           userInfoData
         );
 
@@ -109,7 +109,7 @@ const Login = () => {
     } else if (!/.{6}/.test(password)) {
       setUserInfoError({
         ...userInfoError,
-        userPassword: "Ensure password should be at least 6 charecters",
+        userPassword: "Ensure password should be at least 6 characters",
       });
       setUserInfo({ ...userInfo, userPassword: "" });
     } else {
@@ -124,9 +124,9 @@ const Login = () => {
 
   return (
     <div className="bg-image">
-      <div className=" min-h-screen flex items-center justify-center ">
-        <div className="bg-transparent w-2/6 mx-auto rounded-2xl p-10 border-2 border-blue-300">
-          <h1 className="text-white text-4xl font-semibold mb-6">Sign In</h1>
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="bg-transparent w-full md:w-2/3 lg:w-1/2 xl:w-1/2 mx-auto rounded-2xl p-10 border-2 border-blue-300">
+          <h1 className="text-white text-4xl font-semibold mb-6 text-center">Sign In</h1>
           <form onSubmit={handleUserInfo}>
             <input
               type="email"
