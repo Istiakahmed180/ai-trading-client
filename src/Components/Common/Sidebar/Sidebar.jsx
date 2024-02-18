@@ -26,7 +26,7 @@ const Sidebar = () => {
           ></Image>
           <div>
             <h1 className="font-bold text-xl bg-gradient-to-r from-[#FC495F] to-[#FFC371] text-transparent bg-clip-text">
-              AI Treading
+              HSD AI
             </h1>
             {user?.role === "admin" && (
               <span className="text-white text-lg">
